@@ -63,12 +63,12 @@ img {
     padding: 0 0 10px 0;
 }
 
-.header_logo {
+/*.header_logo {
     width: 50%;
-}
+}*/
 
 .header_title {
-    width: 50%;
+    margin-right: auto;
     text-align: right;
 }
 
