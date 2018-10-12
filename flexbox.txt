@@ -1,0 +1,100 @@
+flexboxes
+header { width: 100%; order: 1; }
+.red { width: 50%; order: 2; }
+.orange { width: 50%; order: 3; }
+footer { width: 100%; order: 4; }
+.light_blue { width: 20%; order: 5; }
+.dark_blue { width: 60%; order: 6; }
+.green { width: 20%; order: 7; }
+
+responsive patterns
+- mostly fluid
+- layout shifter
+- column drop
+- off canvas
+
+<!-- column drop pattern -->
+
+Column Drop Pattern
+- easiest
+- element stacks vertically
+- 2 break points
+
+How to code:
+- start with smallest viewport
+<!-- css style -->
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.box {
+    width: 100%;
+}
+@media screen and (min-width: 450px) {
+    .dark_blue {
+        width: 25%;
+    }
+    .light_blue {
+        width: 75%;
+    }
+}
+@media screen and (max-width: 550px) {
+    .dark_blue, .green {
+        width: 25%;
+    }
+    .light_blue {
+        width: 50%;
+    }
+}
+
+<!-- html section -->
+<div class="container">
+<div class="box dark_blue"></div>
+<div class="box light_blue"></div>
+<div class="box green"></div>
+</div>
+
+<!-- mostly fluid pattern -->
+
+Mostly Fluid Pattern
+- similar to column drop but be more grid like depending on the viewport width
+
+How to code:
+- start with smallest viewport
+<!-- css style -->
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.box {
+    width: 100%;
+}
+@media screen and (min-width: 450px) {
+    .light_blue, .green {
+        width: 50%;
+    }
+}
+@media screen and (min-width: 550px) {
+    .dark_blue, light_blue {
+        width: 50%;
+    }
+    .green, .red, .orange {
+        width: 33.333333%;
+    }
+}
+@media screen and (min-width: 700px) {
+    .container {
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+<!-- html section -->
+<div class="container">
+<div class="box dark_blue"></div>
+<div class="box light_blue"></div>
+<div class="box green"></div>
+<div class="box red"></div>
+<div class="box orange"></div>
+</div>
